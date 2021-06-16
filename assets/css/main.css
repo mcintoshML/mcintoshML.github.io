@@ -2012,7 +2012,7 @@ input, select, textarea {
 			position: relative;
 			left: 0;
 			bottom: -0.2em;
-			line-height: 1.0em;
+			line-height: 0.75em;
 			padding: 0 0 0 0;
 			z-index: 9000;
 			margin-bottom: 0.5em;
@@ -2044,7 +2044,7 @@ input, select, textarea {
 		position: relative;
 		width: 100%;
 		cursor: default;
-		text-align: right;
+		text-align: left;
 		margin-bottom: -2em;
 	}
 		
@@ -2209,7 +2209,8 @@ input, select, textarea {
 			font-size: 2em;
 			letter-spacing: 4px;
 			text-align: left;
-			padding: 0 0 1em 0 ;
+			padding: 0 0 1em 0;
+			line-height: 1em;
 		}
 
 /* Banner */
@@ -2773,7 +2774,7 @@ input, select, textarea {
 			#header h1 {
 				font-size: 2em;
 				letter-spacing: 8px;
-				line-height: 1.325em;
+				line-height: 0.75em;
 			}
 
 			#header p {
