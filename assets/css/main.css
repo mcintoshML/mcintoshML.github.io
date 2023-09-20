@@ -1941,6 +1941,32 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 	}
 
+	.news-item .date {
+		background: #878787;
+		color: #fff;
+		font-weight: 400;
+		text-transform: uppercase;
+		border-radius: 4px;
+		border: 0;
+		box-shadow: 0.125em 0.175em 0 0 rgba(0, 0, 0, 0.125);
+		display: inline-block;
+		font-size: 0.85em;
+		letter-spacing: 2px;
+		padding: 0.25em 1em 0.25em 1em;
+		margin: 0 0 1em 0;
+	}
+	.news-tags{text-align: center;
+		padding: 0em 1em 1em 0em;}
+	 /* Style for tags */
+	 .news-tag {
+		background: #878787;
+		color: #fff;
+		padding: 2px 6px;
+		margin-right: 5px;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
 /* Icons */
 
 	.icon {
@@ -2039,6 +2065,22 @@ input, select, textarea {
 		}
 
 /* Nav */
+
+	.news-navigation {
+		text-align: center;
+	}
+
+	.news-page-link {
+		background: #878787;
+		color: #fff;
+		font-weight: 400;
+		text-transform: uppercase;
+		display: inline-block;
+		margin: 5px;
+		padding: 5px 10px;
+		text-decoration: none;
+		border-radius: 4px;
+	}
 
 	#nav {
 		position: relative;
@@ -2762,6 +2804,10 @@ input, select, textarea {
 		/* Box */
 
 			.box.excerpt header {
+				text-align: center;
+			}
+
+			.news-item header {
 				text-align: center;
 			}
 

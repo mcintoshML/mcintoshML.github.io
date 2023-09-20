@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        /* Style for news items */
+        .news-item {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        /* Style for tags */
+        .tag {
+            background-color: #007bff;
+            color: #fff;
+            padding: 2px 6px;
+            margin-right: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+		.tags{text-align: center;}
+
+        /* Style for navigation bar */
+        .navigation {
+            text-align: center;
+        }
+
+        .page-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest News</h1>
+
+    <!-- Filter buttons for tags -->
+    <div class="tags">
+        <button class="tag-filter" data-tag="students">Students</button>
+        <button class="tag-filter" data-tag="papers">Papers</button>
+        <button class="tag-filter" data-tag="travel">Travel</button>
+        <!-- Add more tags as needed -->
+        <button id="show-all">Show All</button> <!-- Show All button -->
+    </div>
+
+    <!-- News items (each item is within an <li> element within a <ul> list and includes tags) -->
+    <ul class="news-list">
+        <li class="news-item" data-tags="students">News Item 1: This is the content of the first news item. Tags: <span class="tag">Students</span></li>
+        <li class="news-item" data-tags="papers">News Item 2: This is the content of the second news item. Tags: <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="travel">News Item 3: This is the content of the third news item. Tags: <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="students papers">News Item 4: This is the content of the fourth news item. Tags: <span class="tag">Students</span>, <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="students travel">News Item 5: This is the content of the fifth news item. Tags: <span class="tag">Students</span>, <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="papers">News Item 6: This is the content of the sixth news item. Tags: <span class="tag">Papers</span></li>
+		<li class="news-item" data-tags="students">News Item 7: This is the content of the first news item. Tags: <span class="tag">Students</span></li>
+        <li class="news-item" data-tags="papers">News Item 8: This is the content of the second news item. Tags: <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="travel">News Item 9: This is the content of the third news item. Tags: <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="students papers">News Item 10: This is the content of the fourth news item. Tags: <span class="tag">Students</span>, <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="students travel">News Item 11: This is the content of the fifth news item. Tags: <span class="tag">Students</span>, <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="papers">News Item 12: This is the content of the sixth news item. Tags: <span class="tag">Papers</span></li>
+		<li class="news-item" data-tags="students">News Item 13: This is the content of the first news item. Tags: <span class="tag">Students</span></li>
+        <li class="news-item" data-tags="papers">News Item 14: This is the content of the second news item. Tags: <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="travel">News Item 15: This is the content of the third news item. Tags: <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="students papers">News Item 16: This is the content of the fourth news item. Tags: <span class="tag">Students</span>, <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="students travel">News Item 17: This is the content of the fifth news item. Tags: <span class="tag">Students</span>, <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="papers">News Item 18: This is the content of the sixth news item. Tags: <span class="tag">Papers</span></li>
+		<li class="news-item" data-tags="students">News Item 19: This is the content of the first news item. Tags: <span class="tag">Students</span></li>
+        <li class="news-item" data-tags="papers">News Item 20: This is the content of the second news item. Tags: <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="travel">News Item 21: This is the content of the third news item. Tags: <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="students papers">News Item 22: This is the content of the fourth news item. Tags: <span class="tag">Students</span>, <span class="tag">Papers</span></li>
+        <li class="news-item" data-tags="students travel">News Item 23: This is the content of the fifth news item. Tags: <span class="tag">Students</span>, <span class="tag">Travel</span></li>
+        <li class="news-item" data-tags="papers">News Item 24: This is the content of the sixth news item. Tags: <span class="tag">Papers</span></li>
+        <!-- Add more news items with tags here as needed -->
+    </ul>
+
+    <!-- Navigation bar -->
+    <div class="navigation">
+        <!-- Page links will be generated automatically -->
+    </div>
+
+           <script>
+        // JavaScript for handling navigation and filtering
+        const newsItems = document.querySelectorAll('.news-item');
+        const navigation = document.querySelector('.navigation');
+        let itemsPerPage = 3;
+        let currentPage = 0;
+        let currentTag = ''; // Store the currently selected tag filter
+
+        function showPage() {
+            const filteredItems = Array.from(newsItems).filter(item => {
+                const tags = item.getAttribute('data-tags').split(' ');
+                return currentTag === '' || tags.includes(currentTag);
+            });
+
+            const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+            const startIndex = currentPage * itemsPerPage;
+
+            // Determine the items to display on this page
+            const itemsToDisplay = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+
+            newsItems.forEach(item => {
+                // Determine if this item should be displayed on the current page
+                const shouldDisplay = itemsToDisplay.includes(item);
+
+                if (shouldDisplay) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function createPageLinks() {
+            const filteredItems = Array.from(newsItems).filter(item => {
+                const tags = item.getAttribute('data-tags').split(' ');
+                return currentTag === '' || tags.includes(currentTag);
+            });
+
+            const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+
+            navigation.innerHTML = '';
+
+            for (let i = 0; i < totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i + 1;
+                pageLink.classList.add('page-link');
+
+                pageLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    currentPage = i;
+                    showPage();
+                });
+
+                navigation.appendChild(pageLink);
+            }
+        }
+
+        // Create page links and initially show the first page of news items
+        createPageLinks();
+        showPage();
+
+        // Handle tag filtering
+        const tagFilters = document.querySelectorAll('.tag-filter');
+        tagFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                currentTag = filter.getAttribute('data-tag');
+                currentPage = 0; // Reset the current page to the first page
+                createPageLinks();
+                showPage();
+            });
+        });
+
+        // Show All button functionality
+        const showAllButton = document.getElementById('show-all');
+        showAllButton.addEventListener('click', () => {
+            currentTag = ''; // Clear the tag filter
+            currentPage = 0; // Reset the current page to the first page
+            createPageLinks();
+            showPage();
+        });
+    </script>
+</body>
+</html>

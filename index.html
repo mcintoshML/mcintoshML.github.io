@@ -155,12 +155,85 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 					<div id="content" class="col-12">
 						<section id ="news">
 							
-							
+							<!-- Filter buttons for tags -->
+							<div class="news-tags">
+								<button class="tag-filter" data-tag="Students">Students</button>
+								<button class="tag-filter" data-tag="Publications">Publications</button>
+								<button class="tag-filter" data-tag="Awards">Awards</button>
+								<button class="tag-filter" data-tag="Media">Media</button>
+								<!-- Add more tags as needed -->
+								<button id="show-all">Show All</button> 
+							</div>
 							
 							<ul class="divided">
-								<li>
+								<li class="news-item" data-tags="Students Awards">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
+										<div class="row">
+											<div class="col-2 col-6-medium col-12-small">
+												<div class="image news"><img src="images/CIHR.jpg" alt=""></div>
+											</div>
+											<div class="col-10">
+												<span class="date">August 01, 2023</span> <p>Aly Khalifa and Yuan Gao are awarded CIHR CGS-D fellowships for 3-years!</p>
+											</div>
+										</div>
+									</article>
+								</li>
+								<li class="news-item" data-tags="Students Awards">
+									<!-- Excerpt -->
+									<article>
+										<div class="row">
+											<div class="col-2 col-6-medium col-12-small">
+												<div class="image news"><img src="images/DSI.png" alt=""></div>
+											</div>
+											<div class="col-10">
+												<span class="date">August 01, 2023</span> <p>Sangwook Kim awarded DSI fellowship for 3-years!</p>
+											</div>
+										</div>
+									</article>
+								</li>
+								<li class="news-item" data-tags="Students">
+									<!-- Excerpt -->
+									<article>
+										<div class="row">
+											<div class="col-2 col-6-medium col-12-small">
+												<div class="image news"><img src="images/mbp.jpg" alt=""></div>
+											</div>
+											<div class="col-10">
+												<span class="date">May 11, 2023</span> <p>Sangwook Kim successfully passes his PhD reclassification exam on Multi-Task Learning For Robust Deep Learning-Based Medical Image Analysis!</p>
+											</div>
+										</div>
+									</article>
+								</li>
+								<li class="news-item" data-tags="Students">
+									<!-- Excerpt -->
+									<article>
+										<div class="row">
+											<div class="col-2 col-6-medium col-12-small">
+												<div class="image news"><img src="images/mbp.jpg" alt=""></div>
+											</div>
+											<div class="col-10">
+												<span class="date">May 11, 2023</span> <p>Yuan Gao successfully passes his PhD reclassification exam on Temporal Deep Learning Applications in Healthcare Monitoring and Wearables!</p>
+											</div>
+										</div>
+									</article>
+								</li>
+								<li class="news-item" data-tags="Students">
+									<!-- Excerpt -->
+									<article>
+										<div class="row">
+											<div class="col-2 col-6-medium col-12-small">
+												<div class="image news"><img src="images/mbp.jpg" alt=""></div>
+											</div>
+											<div class="col-10">
+												<span class="date">July 8, 2022</span> <p>Aly Khalifa successfully passes his PhD reclassification exam on Automated Treatment Planning for Adaptive Radiation Therapy!</p>
+											</div>
+										</div>
+									</article>
+								</li>
+								<li class="news-item" data-tags="Students">
+									<!-- Excerpt -->
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/mbp.jpg" alt=""></div>
@@ -171,9 +244,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Publications">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/NatMed_AutoP_Cover.png" alt=""></div>
@@ -185,9 +258,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Students">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/mbp.jpg" alt=""></div>
@@ -199,9 +272,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Media">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/AI_PMCC_Chris_©KyleScott-1-1500x2000.jpg" alt=""></div>
@@ -213,9 +286,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Publications">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/AC_MassSpec_2021.png" alt=""></div>
@@ -227,9 +300,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Awards">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/MedImag_UofT.jpg" alt=""></div>
@@ -241,9 +314,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Media">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/apple_series_6.jpg" alt=""></div>
@@ -253,9 +326,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Publications">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/MICCAI_CDF_2020.png" alt=""></div>
@@ -267,9 +340,9 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 										</div>
 									</article>
 								</li>
-								<li>
+								<li class="news-item" data-tags="Awards">
 									<!-- Excerpt -->
-									<article class="box excerpt">
+									<article>
 										<div class="row">
 											<div class="col-2 col-6-medium col-12-small">
 												<div class="image news"><img src="images/logo-PMCC.png" alt=""></div>
@@ -282,6 +355,10 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 									</article>
 								</li>
 							</ul>
+							<!-- Navigation bar -->
+							<div class="news-navigation">
+								<!-- Page links will be generated automatically -->
+							</div>
 						</section>
 						<!-- Post -->
 						
@@ -487,7 +564,6 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 					<div id="content" class="col-12">
 						<section id="Publications">
 							<script src="https://bibbase.org/show?bib=https%3A%2F%2Fmcintoshml.github.io%2Fcitations.bib&commas=true&jsonp=1"></script>
-							
 							<!--https://academia.stackexchange.com/questions/719/tool-to-manage-and-or-make-available-a-list-of-my-publications-on-the-web
 							
 							http://scienceinthesands.blogspot.com/2011/10/managing-publication-lists-in-html.html
@@ -634,6 +710,88 @@ Strongly Typed by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			// JavaScript for handling navigation and filtering
+			const newsItems = document.querySelectorAll('.news-item');
+			const navigation = document.querySelector('.news-navigation');
+			let itemsPerPage = 7;
+			let currentPage = 0;
+			let currentTag = ''; // Store the currently selected tag filter
+	
+			function showPage() {
+				const filteredItems = Array.from(newsItems).filter(item => {
+					const tags = item.getAttribute('data-tags').split(' ');
+					return currentTag === '' || tags.includes(currentTag);
+				});
+	
+				const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+				const startIndex = currentPage * itemsPerPage;
+	
+				// Determine the items to display on this page
+				const itemsToDisplay = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+	
+				newsItems.forEach(item => {
+					// Determine if this item should be displayed on the current page
+					const shouldDisplay = itemsToDisplay.includes(item);
+	
+					if (shouldDisplay) {
+						item.style.display = 'block';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+			}
+	
+			function createPageLinks() {
+				const filteredItems = Array.from(newsItems).filter(item => {
+					const tags = item.getAttribute('data-tags').split(' ');
+					return currentTag === '' || tags.includes(currentTag);
+				});
+	
+				const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+	
+				navigation.innerHTML = '';
+	
+				for (let i = 0; i < totalPages; i++) {
+					const pageLink = document.createElement('a');
+					pageLink.href = '#';
+					pageLink.textContent = i + 1;
+					pageLink.classList.add('news-page-link');
+	
+					pageLink.addEventListener('click', (event) => {
+						event.preventDefault();
+						currentPage = i;
+						showPage();
+					});
+	
+					navigation.appendChild(pageLink);
+				}
+			}
+	
+			// Create page links and initially show the first page of news items
+			createPageLinks();
+			showPage();
+	
+			// Handle tag filtering
+			const tagFilters = document.querySelectorAll('.tag-filter');
+			tagFilters.forEach(filter => {
+				filter.addEventListener('click', () => {
+					currentTag = filter.getAttribute('data-tag');
+					currentPage = 0; // Reset the current page to the first page
+					createPageLinks();
+					showPage();
+				});
+			});
+	
+			// Show All button functionality
+			const showAllButton = document.getElementById('show-all');
+			showAllButton.addEventListener('click', () => {
+				currentTag = ''; // Clear the tag filter
+				currentPage = 0; // Reset the current page to the first page
+				createPageLinks();
+				showPage();
+			});
+		</script>
 		<script>
 			$('a.mail').on('click', function(){
 			var href = $(this).attr('href');
