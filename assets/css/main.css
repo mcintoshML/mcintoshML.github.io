@@ -1673,10 +1673,10 @@ input, select, textarea {
 		padding-left: 0;
 	}
 	ul.divided strong {
-			font-size: 1.5em;
-			margin-top: 0.1em;
-			position: absolute;
-			padding: 0 0 0 0.3em;
+			font-size: 1.0em;
+			margin-top: 0em;
+			position: relative;
+			padding: 0 0 0 0em;
 		}
 		ul.divided li {
 			border-top: solid 2px #e5e5e5;
